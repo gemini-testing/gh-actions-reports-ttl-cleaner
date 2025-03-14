@@ -1,0 +1,26 @@
+name: 'Testplane reports ttl cleaner action'
+description: 'GitHub action for cleaning old Testplane reports on gh-pages'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+inputs:
+  html-report-prefix:
+    description: 'Html-reporter report path prefix'
+    required: false
+    default: 'testplane-reports'
+  ttl:
+    description: 'Reports ttl (in days)'
+    required: false
+    default: '90'
+  branch:
+    description: 'A branch to remove old directories from'
+    required: false
+    default: 'gh-pages'
+  user-name:
+    description: 'Github user name to commit'
+    required: false
+    default: 'gh-actions-reports-ttl-cleaner'
+  user-email:
+    description: 'Github user email to commit'
+    required: false
+    default: 'gh-actions-reports-ttl-cleaner@users.noreply.github.com'
